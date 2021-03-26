@@ -70,11 +70,14 @@ namespace lr15
 
         private void buttonMath_Click(object sender, EventArgs e)
         {
+            int N = 0;
             double U = 1;
             double X = Convert.ToDouble(textMath1.Text);
             double Y = Convert.ToDouble(textMath2.Text);
             string result = Microsoft.VisualBasic.Interaction.InputBox("Введите N:");
-            int N = Convert.ToInt32(result);       
+            if (result == "")
+                result = "0";
+            N = Convert.ToInt32(result);       
 
             int m = 1;
             for (int i = 1; i < N; i++)
