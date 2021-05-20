@@ -1,0 +1,44 @@
+﻿<Window x:Class="lr_18.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lr_18"
+        mc:Ignorable="d"
+        Title="Window1" Height="400" Width="800">
+    <Border>
+        <StackPanel>
+            <Grid Height="206" Margin="0,0,-0.4,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="x" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                <TextBox Text="0,00" Grid.Row="0" Grid.Column="1" Name="TextX"/>
+                <Label Content="y" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+                <TextBox Text="0,00" Grid.Row="1" Grid.Column="1" Name="TextY"/>
+                <Label Content="K" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0"/>
+                <ComboBox Name="ComboK" SelectedIndex="0" Grid.Row="2" Grid.Column="2">
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem>20</ComboBoxItem>
+                    <ComboBoxItem>30</ComboBoxItem>
+                    <ComboBoxItem>40</ComboBoxItem>
+                </ComboBox>
+                <Label Content="N" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0"/>
+                <ComboBox Name="ComboN" SelectedIndex="0" Grid.Row="3" Grid.Column="2">
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+                    <ComboBoxItem>4</ComboBoxItem>
+                    <ComboBoxItem>5</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+            <Button Content="Считать" Click="Button_Click" Width="500" Height="20" Margin="50"/>
+        </StackPanel>
+    </Border>
+</Window>
