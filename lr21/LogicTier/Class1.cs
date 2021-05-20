@@ -35,12 +35,6 @@ namespace LogicTier
             get { return st.Задолженности; }
             set { st.Задолженности = value; }
         }
-
-
-        public String AllInfo
-        {
-            get { return st.ФИО + " : " + st.Группа + " : " + st.Курс.ToString() + " : " + st.Задолженности.ToString(); }
-        }
     }
     public class Summary
     {
