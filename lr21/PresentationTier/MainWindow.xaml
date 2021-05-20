@@ -1,0 +1,59 @@
+﻿<Window x:Class="PresentationTier.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PresentationTier"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Name="GridForTovar" 
+              DataContext="{Binding ElementName=MainList, Path=SelectedItem}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Margin="5" Grid.Row="0" Text="ФИО"/>
+            <TextBox Margin="5" Grid.Row="0" Grid.Column="1" Text="{Binding ФИОСтудента}"/>
+            <TextBlock Margin="5" Grid.Row="1" Text="Группа"/>
+            <TextBox Margin="5" Grid.Row="1" Grid.Column="1" Text="{Binding ГруппаСтудента}"/>
+            <TextBlock Margin="5" Grid.Row="2" Text="Курс"/>
+            <TextBox Margin="5" Grid.Row="2" Grid.Column="1" Text="{Binding КурсСтудента}"/>
+            <TextBlock Margin="5" Grid.Row="3" Text="Задолженности"/>
+            <TextBox Margin="5" Grid.Row="3" Grid.Column="1" Text="{Binding ЗадолженностьСтудента}"/>
+        </Grid>
+        <Grid Grid.Row="1" Name="GridForCollection">
+            <ListBox Name="MainList" ItemsSource="{Binding СписокСтудентов, Mode=OneWay}" 
+                     DisplayMemberPath="ПредставлениеСтудента" Background="Azure" 
+                     Margin="10"/>
+        </Grid>
+        <Grid Grid.Row="2" Name="GridForItog">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="5" Text="Суммарное количество задолжностей: " Grid.Column="0" 
+                       HorizontalAlignment="Right"/>
+            <TextBox Margin="5" Grid.Column="1" 
+                     Text="{Binding Path=СуммарноеКоличествоЗадолжностей, Mode=OneWay}"/>
+            <TextBlock Margin="5" Grid.Row="1" Text="Количество людей без задолженностей: "  Grid.Column="2" 
+                       HorizontalAlignment="Right"/>
+            <TextBox Margin="5" Grid.Column="3" 
+                     Text="{Binding Path=СуммарноеКоличествоЛюдей, Mode=OneWay}"/>
+        </Grid>
+    </Grid>
+</Window>
